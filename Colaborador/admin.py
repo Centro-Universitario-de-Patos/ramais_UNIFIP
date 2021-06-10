@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import Colaborador
 
-# Register your models here.
+
+@admin.register(Colaborador)
+class Admin(admin.ModelAdmin):
+    list_display = ('nome', 'email', 'celular', 'instagram', 'linkedin')
